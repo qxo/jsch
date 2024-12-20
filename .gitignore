@@ -10,3 +10,8 @@
 out/
 target/
 *.class
+
+# ecliipse
+.classpath
+.project
+.settings/
