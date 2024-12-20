@@ -29,7 +29,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package com.jcraft.jsch;
 
-import java.io.*;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.IOException;
 
 
 public abstract class Channel implements Runnable{
@@ -72,9 +76,6 @@ public abstract class Channel implements Runnable{
     }
     if(type.equals("subsystem")){
       return new ChannelSubsystem();
-    }
-    if(type.equals("direct-streamlocal@openssh.com")){
-      return new ChannelDirectStreamLocal();
     }
     return null;
   }
